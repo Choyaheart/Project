@@ -1,27 +1,37 @@
 import random
+best_game = 100
+keep_playing = True
+while keep_playing:
 
-Have_not_guessed = True
-computer_choose = random.randint(0,100)
-guesses = 0
+    Have_not_guessed = True
+    computer_choose = random.randint(0,100)
+    guesses = 0
 
-while Have_not_guessed:
-    user_choice = input("I have selected a number. Try to guess it!")
-    user_choice = int(user_choice)
-    if user_choice < computer_choose:
-        print("That number is too small. Try again.")
-        guesses = guesses + 1
-    elif user_choice > computer_choose:
-        print("That number is too large. Try again.")
-        guesses = guesses + 1
-    elif user_choice > 100:
-        print("That's not even possible. Stupid.")
-    elif user_choice == computer_choose:
-        print("That's it!")
-        Have_not_guessed = False
+    while Have_not_guessed:
+        user_choice = input("I have selected a number. Try to guess it!")
+        user_choice = int(user_choice)
+        if user_choice < computer_choose:
+            print("That number is too small. Try again.")
+            guesses = guesses + 1
+        elif user_choice > computer_choose:
+            print("That number is too large. Try again.")
+            guesses = guesses + 1
+        elif user_choice > 100:
+            print("That's not even possible. Stupid.")
+        elif user_choice == computer_choose:
+            print("That's it!")
+            Have_not_guessed = False
         if guesses < 10:
                 print("Hmph. You did alright, for a human.")
         print(guesses)
         if guesses > 10:
                 print("Wow. I'm speechless. It took you that long? What a tool. (ಡ艸ಡ)")
         print(guesses)
+        if guesses < best_game:
+            best_game = guesses
+            print("New best game.")
+        play_again = input("Do you want to play again? Yes/No")
+        if play_again == "No" or "no":
+            keep_playing = False
+            print("Thank you for playing!")
 
