@@ -1,0 +1,31 @@
+import random
+
+
+computer_choice = random.randint(0,2)
+user_choice = input("Choose Rock, Paper or Scissors!")
+if user_choice == 'Rock'or 'rock':
+    user_choice = 0
+elif user_choice =='Paper'or 'paper':
+    user_choice = 1
+elif user_choice == 'Scissors'or 'scissors':
+    user_choice = 2
+else: print("Come on, that's not how the game is played!")
+if computer_choice == 0 and user_choice == 1:
+    print("Computer chose Rock. You win!")
+elif computer_choice == 1 and user_choice == 0:
+    print("Computer chose Paper. You lose!")
+elif computer_choice == 0 and user_choice == 0:
+    print("Computer chose Rock as well! Tie!")
+elif computer_choice == 1 and user_choice == 1:
+    print("Computer also chose Paper! Tie!")
+elif computer_choice == 2 and user_choice == 2:
+    print("Computer also chose Scissors. Tie!")
+elif computer_choice == 2 and user_choice == 1:
+    print("Computer chooses Scissors. You lose.")
+elif computer_choice == 1 and user_choice == 2:
+    print("Computer chooses Paper. You win!")
+elif computer_choice == 0 and user_choice == 2:
+    print("Computer chooses Rock. You lose!")
+elif computer_choice == 2 and user_choice == 0:
+    print("Computer chooses Scissors. You win!")
+print("Thanks for playing! ヽ(´▽`)/")
